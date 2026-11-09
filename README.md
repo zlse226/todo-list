@@ -5,8 +5,8 @@
 
 ## 링크
 
-- 배포 사이트: 배포 후 주소 추가
-- GitHub 저장소: 저장소 생성 후 주소 추가
+- 배포 사이트: https://todo-list-ashen-nu-98.vercel.app
+- GitHub 저장소: https://github.com/zlse226/todo-list
 
 ## 사용 기술
 
