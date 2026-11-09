@@ -8,6 +8,7 @@ type TodoCheckboxProps = {
   disabled?: boolean;   // 버튼을 잠글지 여부
 };
 
+// 목록과 상세에서 할 일의 완료 상태를 표시하고 변경하는 체크 버튼
 export default function TodoCheckbox({
   isCompleted,
   onToggle,

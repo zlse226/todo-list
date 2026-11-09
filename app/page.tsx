@@ -108,7 +108,7 @@ async function handleToggleTodo(todo: Todo) {
   }
 }
 
-  // 
+  //  10개씩 여러 페이지를 불러와 전체 할 일 목록을 보여줌
   useEffect(() => {
   const controller = new AbortController();
 

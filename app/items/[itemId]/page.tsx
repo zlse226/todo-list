@@ -31,7 +31,7 @@ function ItemDetailContent() {
     // 주소가 /items/12라면 itemId는 "12"
     const { itemId } = useParams<{ itemId: string }>();
 
-    // 저장 후 목록으로 이동하고, 중복 클릭을 막아요.
+    // 저장 후 목록으로 이동하고, 중복 클릭을 막음
     const router = useRouter();
     const [isSaving, setIsSaving] = useState(false);
 
@@ -42,6 +42,7 @@ function ItemDetailContent() {
     useEffect(() => {
     const controller = new AbortController();
 
+    // 선택한 할 일의 기존 내용을 불러옴
     async function loadItem() {
         try {
         const response = await fetch(
@@ -91,13 +92,14 @@ function ItemDetailContent() {
     };
     }, [imageUrl]);
 
+    // 선택한 이미지의 형식, 파일명, 크기를 검사하고 미리보기를 표시
     function handleImageChange(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
 
     // 파일 선택을 취소하면 종료
     if (!file) return;
 
-    // 이미지 파일이 아니면 선택을 취소해요.
+    // 이미지 파일이 아니면 선택을 취소
     if (!file.type.startsWith("image/")) {
         alert("이미지 파일을 선택해 주세요.");
         event.target.value = "";
@@ -124,6 +126,7 @@ function ItemDetailContent() {
     setImageFile(file);
     }
 
+    // 이미지 파일을 업로드하고 저장된 이미지 주소를 반환
     async function uploadImage(file: File) {
     // 파일을 API에 보낼 수 있는 형식으로 담음
     const formData = new FormData();
@@ -146,7 +149,7 @@ function ItemDetailContent() {
     return result.url;
     }
 
-
+    // 수정한 내용과 이미지를 저장하고 목록으로 이동
     async function handleSave() {
     const trimmedName = name.trim();
 
