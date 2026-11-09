@@ -1,0 +1,202 @@
+/* 상세페이지 css */
+.main{
+    width: 100%;
+    max-width: 996px;
+    margin: 0 auto;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.detailTitle{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    gap: 16px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 2px solid var(--color-slate-900);
+    border-radius: 24px;
+}
+
+.detailTitle img{
+    width: 32px;
+    height: 32px;
+}
+
+.detailTitle.detailCompleted {
+    /* 완료 상태일 때 제목 영역 */
+    background-color: var(--color-violet-100);
+}
+
+.saveCompleted {
+    /* 완료 상태일 때 수정 완료 버튼 */
+    background-color: var(--color-lime-300);
+}
+
+.detailText{
+    font-weight: 700;
+    color: var(--color-slate-900);
+    font-size: 20px;
+    background-color: transparent;
+    field-sizing: content;
+    min-width: 1ch;                 /* 제목을 모두 지워도 입력칸 최소1글자 유지 (<-> 0 : 제목을 모두 지우면 입력칸 0으로*/
+    max-width: calc(100% - 48px); /* 체크 아이콘 32px + 간격 16px */        
+}
+
+.detailColumns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.detailFile{
+    flex: 1;
+    height: 311px;
+    background-color: rgba(248, 250, 252, 1);
+    border-radius: 24px;
+    border: 2px dashed var(--color-slate-300);
+    display: grid;
+    place-items: center;
+
+    position: relative;
+}
+
+.detailPreview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+    border-radius: 22px;
+}
+
+.detailFileIcon{
+    width: 64px;
+    height: 64px;
+
+}
+
+.detailFileBtn{
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    cursor: pointer;
+}
+
+/* 파일 선택 input은 숨기고 + 아이콘 염 */
+.detailFileInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+
+
+
+
+.detailMemo{
+    width: 588px;
+    height: 311px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.detailMemo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.detailMemoContent{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailMemoTitle{
+    /* width: 100%; */
+    height: 18px;
+    font-weight: 800;
+    color: var(--color-amber-800);
+    text-align: center;
+}
+
+.detailMemoText{
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    margin: 16px;
+    resize: none;
+    background-color: transparent;
+    color: var(--color-slate-800);
+    text-align: center;
+    outline: none;
+    scrollbar-color: #fde68a transparent;
+    scrollbar-width: thin;
+}
+
+.detailBtnsBox{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.deleteBtn{
+    background-color: var(--color-rose-500);
+    color: rgba(255, 255, 255, 1);
+}
+
+
+@media (width < 1024px){
+    .main{
+        width: calc(100% - 48px);
+    }
+
+    .detailColumns{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+    .detailFile{
+        flex: none;
+    }
+
+    .detailFile, .detailMemo {
+        width: 100%;
+        height: 311px;
+        justify-content: center;
+    }
+
+    .detailBtnsBox{
+        justify-content: center;
+    }
+}
+
+@media (width < 744px){
+    .main {
+        width: calc(100% - 32px); /* 좌우 16px씩 */
+        min-width: 375px;
+    }
+
+    .detailBtnsBox button {
+        min-width: 168px;
+    }
+
+}

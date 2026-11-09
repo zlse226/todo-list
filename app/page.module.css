@@ -1,0 +1,166 @@
+
+.main{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.todoAdd {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.todoAdd input{
+    flex: 1;
+    width: auto;
+    height: 56px;
+    border: 2px solid var(--color-slate-900);
+    border-radius: 24px;
+    padding: 0 24px;
+    color: var(--color-slate-500);
+    background-color: var(--color-slate-100);
+    box-shadow: 5px 5px 0 var(--color-slate-900);
+    /* outline: none; */
+}
+
+.todoAdd input:focus {
+  outline: 1px solid var(--color-violet-600);
+  outline-offset: 1px;
+}
+
+
+.todoAdd .todoAddBtnEmpty {
+  /* 빈 목록에서는 보라색 배경과 흰색 글자 */
+  background-color: var(--color-violet-600);
+  color: #fff;
+}
+
+.todoAdd .todoAddBtnEmpty .todoAddIcon {
+  /* 기존 검은색 필터를 덮어써서 + 아이콘도 흰색 */
+  filter: brightness(0) invert(1);
+}
+
+.todoAddIcon{
+    filter: brightness(0);
+}
+
+
+
+.todoColumns{
+    display: flex;
+    align-items: flex-start; /* 목록 길이가 달라도 두 섹션의 제목을 같은 높이에서 시작 */
+    margin: 40px 0;
+    gap: 24px;
+}
+
+.todoSection, .doneSection{
+    flex: 1; /* 두 섹션이 같은 너비 */
+    min-width: 0; /* 내용때문에 한쪽이 무너지는것 방지 */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.todoList{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.todoEmpty{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-top: 64px;
+}
+
+.todoEmpty img{
+    width: 240px;
+    height: 240px;
+}
+
+.todoEmpty p{
+    margin: 0;
+    font-weight: 700;
+    color: var(--color-slate-400);
+    text-align: center;
+    line-height: 1.25;
+}
+
+
+.todoItem{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 27px;
+    border: 2px solid var(--color-slate-900);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 16px;
+}
+.todoSection .todoItem{
+    background-color: rgba(255, 255, 255, 1);
+}
+.doneSection .todoItem{
+    background-color: var(--color-violet-100);
+}
+
+.doneSection .todoItemText{
+    text-decoration: line-through;
+}
+
+.todoItemText{
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;         /* 영역을 넘는 글자는 숨김 */
+    white-space: nowrap;      /* 제목을 한 줄로 표시 */
+    text-overflow: ellipsis;  /* 넘치는 부분은 ...으로 표시 */
+  
+}
+
+
+@media (width < 1024px){
+    .main{
+        padding-inline: 24px;
+    }
+
+    .todoColumns{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 48px;
+    }
+
+    .todoEmpty{
+        padding-top: 0;
+    }
+}
+
+@media (width < 744px){
+    .main{
+        width: 100%;
+        min-width: 375px;
+        padding-inline: 16px; /* 모바일 좌우 여백 16px */
+    }
+
+
+    .todoAdd .todoAddBtn{
+        width: 56px;
+        flex-shrink: 0; /* 입력창 때문에 버튼 찌그러지는것 막기 */
+    }
+
+    .todoAddLabel{
+        display: none;
+    }
+
+    .todoEmpty img{
+        width: 120px;
+        height: 120px;
+    }
+}

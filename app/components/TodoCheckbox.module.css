@@ -1,0 +1,11 @@
+.checkbox {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checkbox img {
+  width: 100%;
+  height: 100%;
+}

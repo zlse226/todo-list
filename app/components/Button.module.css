@@ -1,0 +1,24 @@
+/* 세 버튼이 공통으로 사용하는 기본 모양 */
+.button {
+  width: 168px;
+  height: 56px;
+  border: 2px solid var(--color-slate-900);
+  border-radius: 24px;
+  background-color: var(--color-slate-200);
+  box-shadow: 5px 5px 0 var(--color-slate-900);
+
+  /* 버튼 안의 아이콘과 글자를 가운데에 나란히 배치 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 공용 버튼 안의 아이콘 */
+.button img {
+  width: 16px;
+  height: 16px;
+}
